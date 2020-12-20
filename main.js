@@ -1,4 +1,15 @@
-window.document.onload = function() {
+// window.document.onload = function(e) {
+//   let clicks = sessionStorage.getItem("clickCount");
+//   console.log("onload: " + clicks);
+//   if (clicks % 2 !== 0 || !clicks) {
+//     document.body.classList.replace("retro-body", "modern-body");
+//   }
+//   else {
+//     document.body.classList.replace("modern-body", "retro-body");
+//   }
+// }
+
+document.addEventListener("DOMContentLoaded", function(event) {
   let clicks = sessionStorage.getItem("clickCount");
   console.log("onload: " + clicks);
   if (clicks % 2 !== 0 || !clicks) {
@@ -7,7 +18,7 @@ window.document.onload = function() {
   else {
     document.body.classList.replace("modern-body", "retro-body");
   }
-}
+});
 
 function eraToggle() {
   let clicks = sessionStorage.getItem("clickCount");
