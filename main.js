@@ -1,16 +1,37 @@
 function eraToggle() {
-  document.body.classList.toggle("modern-body");
+  let clicks = sessionStorage.getItem("clickCount");
+  if (clicks) {
+    sessionStorage.setItem("clickCount", Number(clicks)+1);
+  } else {
+    sessionStorage.setItem("clickCount", 1);
+  }
+  console.log(clicks);
+  // sessionStorage.clickcount += 1;
   var retroCont = document.getElementsByClassName("retro-container")[0];
   var modernCont = document.getElementsByClassName("modern-container")[0];
-  if (retroCont.style.display === "block" && modernCont.style.display === "none") {
+  if (clicks % 2 !== 0) {
     retroCont.style.display = "none";
     modernCont.style.display = "block";
-  }
-  else if (retroCont.style.display === "none" && modernCont.style.display === "block") {
-    retroCont.style.display = "block";
-    modernCont.style.display = "none";
+    document.body.classList.replace("retro-body", "modern-body");
   }
   else {
-    console.log("Toggle error! :(");
+    retroCont.style.display = "block";
+    modernCont.style.display = "none";
+    document.body.classList.replace("modern-body", "retro-body");
   }
+
+  // document.body.classList.toggle("modern-body");
+  // var retroCont = document.getElementsByClassName("retro-container")[0];
+  // var modernCont = document.getElementsByClassName("modern-container")[0];
+  // if (retroCont.style.display === "block" && modernCont.style.display === "none") {
+  //   retroCont.style.display = "none";
+  //   modernCont.style.display = "block";
+  // }
+  // else if (retroCont.style.display === "none" && modernCont.style.display === "block") {
+  //   retroCont.style.display = "block";
+  //   modernCont.style.display = "none";
+  // }
+  // else {
+  //   console.log("Toggle error! :(");
+  // }
 }
