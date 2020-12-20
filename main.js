@@ -1,5 +1,6 @@
 window.document.onload = function() {
   let clicks = sessionStorage.getItem("clickCount");
+  console.log("onload: " + clicks);
   if (clicks % 2 !== 0 || !clicks) {
     document.body.classList.replace("retro-body", "modern-body");
   }
