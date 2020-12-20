@@ -1,3 +1,13 @@
+window.document.onload = function() {
+  let clicks = sessionStorage.getItem("clickCount");
+  if (clicks % 2 !== 0 || !clicks) {
+    document.body.classList.replace("retro-body", "modern-body");
+  }
+  else {
+    document.body.classList.replace("modern-body", "retro-body");
+  }
+}
+
 function eraToggle() {
   let clicks = sessionStorage.getItem("clickCount");
   if (clicks) {
