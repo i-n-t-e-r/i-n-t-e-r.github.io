@@ -32,7 +32,6 @@ function eraToggle() {
   let clicks = sessionStorage.getItem("clickCount");
   clicks = Number(clicks) + 1;
   sessionStorage.setItem("clickCount", clicks);
-  console.log(clicks);
   if (clicks % 2 === 0) {
     showRetroSite();
   }
@@ -40,19 +39,4 @@ function eraToggle() {
     showModernSite();
   }
 
-
-  // document.body.classList.toggle("modern-body");
-  // var retroCont = document.getElementsByClassName("retro-container")[0];
-  // var modernCont = document.getElementsByClassName("modern-container")[0];
-  // if (retroCont.style.display === "block" && modernCont.style.display === "none") {
-  //   retroCont.style.display = "none";
-  //   modernCont.style.display = "block";
-  // }
-  // else if (retroCont.style.display === "none" && modernCont.style.display === "block") {
-  //   retroCont.style.display = "block";
-  //   modernCont.style.display = "none";
-  // }
-  // else {
-  //   console.log("Toggle error! :(");
-  // }
 }
