@@ -12,7 +12,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   let clicks = sessionStorage.getItem("clickCount");
   console.log("onload: " + clicks);
-  if (clicks % 2 !== 0 || !clicks) {
+  if (clicks % 2 !== 0) {
     document.body.classList.replace("retro-body", "modern-body");
   }
   else {
