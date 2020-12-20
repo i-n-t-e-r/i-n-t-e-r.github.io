@@ -3,13 +3,13 @@ function eraToggle() {
   if (clicks) {
     sessionStorage.setItem("clickCount", Number(clicks)+1);
   } else {
-    sessionStorage.setItem("clickCount", 1);
+    sessionStorage.setItem("clickCount", 0);
   }
   console.log(clicks);
   // sessionStorage.clickcount += 1;
   var retroCont = document.getElementsByClassName("retro-container")[0];
   var modernCont = document.getElementsByClassName("modern-container")[0];
-  if (clicks % 2 !== 0) {
+  if (clicks % 2 !== 0 || !clicks) {
     retroCont.style.display = "none";
     modernCont.style.display = "block";
     document.body.classList.replace("retro-body", "modern-body");
