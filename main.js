@@ -1,46 +1,45 @@
-// window.document.onload = function(e) {
-//   let clicks = sessionStorage.getItem("clickCount");
-//   console.log("onload: " + clicks);
-//   if (clicks % 2 !== 0 || !clicks) {
-//     document.body.classList.replace("retro-body", "modern-body");
-//   }
-//   else {
-//     document.body.classList.replace("modern-body", "retro-body");
-//   }
-// }
 
 document.addEventListener("DOMContentLoaded", function(event) {
   let clicks = sessionStorage.getItem("clickCount");
-  console.log("onload: " + clicks);
-  if (clicks % 2 !== 0) {
-    document.body.classList.replace("retro-body", "modern-body");
+  if (!clicks) {
+    sessionStorage.setItem("clickCount", 0);
+  }
+  if (clicks % 2 === 0) {
+    showRetroSite();
   }
   else {
-    document.body.classList.replace("modern-body", "retro-body");
+    showModernSite();
   }
 });
 
+function showModernSite() {
+  let retroCont = document.getElementsByClassName("retro-container")[0];
+  let modernCont = document.getElementsByClassName("modern-container")[0];
+  retroCont.style.display = "none";
+  modernCont.style.display = "block";
+  document.body.classList.replace("retro-body", "modern-body");
+}
+
+function showRetroSite() {
+  let retroCont = document.getElementsByClassName("retro-container")[0];
+  let modernCont = document.getElementsByClassName("modern-container")[0];
+  retroCont.style.display = "block";
+  modernCont.style.display = "none";
+  document.body.classList.replace("modern-body", "retro-body");
+}
+
 function eraToggle() {
   let clicks = sessionStorage.getItem("clickCount");
-  if (clicks) {
-    sessionStorage.setItem("clickCount", Number(clicks)+1);
-  } else {
-    sessionStorage.setItem("clickCount", 0);
-  }
+  clicks = Number(clicks) + 1;
+  sessionStorage.setItem("clickCount", clicks);
   console.log(clicks);
-  // sessionStorage.clickcount += 1;
-  var retroCont = document.getElementsByClassName("retro-container")[0];
-  var modernCont = document.getElementsByClassName("modern-container")[0];
-  if (clicks % 2 !== 0 || !clicks) {
-    retroCont.style.display = "none";
-    modernCont.style.display = "block";
-    document.body.classList.replace("retro-body", "modern-body");
+  if (clicks % 2 === 0) {
+    showRetroSite();
   }
   else {
-    retroCont.style.display = "block";
-    modernCont.style.display = "none";
-    document.body.classList.replace("modern-body", "retro-body");
+    showModernSite();
   }
+
 
   // document.body.classList.toggle("modern-body");
   // var retroCont = document.getElementsByClassName("retro-container")[0];
