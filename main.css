@@ -1,11 +1,43 @@
+@font-face {
+    font-family: 'Sans Times Sans @32R';
+    src: url('SansTimesSans32R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sans Times Sans @24R';
+    src: url('SansTimesSans24R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sans Times Sans @16R';
+    src: url('SansTimesSans16R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
   width: 100%;
   height: auto;
   scroll-behavior: smooth;
 }
 
+h1 {
+  font-family: 'Sans Times Sans @32R', Times, serif;
+}
+
+marquee {
+  font-family: 'Sans Times Sans @24R', Times, serif;
+}
+
 .retro-body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Sans Times Sans @16R', Times, serif;
   background-image: url('./img/water-bkgrd.jpg');
   color: yellow;
 }
