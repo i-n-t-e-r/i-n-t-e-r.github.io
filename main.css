@@ -308,3 +308,30 @@ html {
 .item img {
   width: 100%;
 }
+
+.show h1 {
+  font-family: 'Sans Times Sans @32R', Times, serif;
+  color: black;
+  font-size: 32px;
+}
+
+.show h2 {
+  font-family: 'Sans Times Sans @24R', Times, serif;
+  color: black;
+  font-size: 24px;
+}
+
+.show p {
+  font-family: 'Sans Times Sans @16R', Times, serif;
+  color: black;
+  font-size: 16px;
+}
+
+.show-img-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.show-img-container img {
+  width: 100%
+}
